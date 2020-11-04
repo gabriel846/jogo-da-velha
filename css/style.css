@@ -1,11 +1,11 @@
-body {
+body {/*posisao da tabela */
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .game {
+  .game {/*medida dos 9 quadrados */
     width: 100vw;
     height: 100vw;
     margin: 0 auto;
@@ -15,7 +15,7 @@ body {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr)
   }
   
-  .game>div {
+  .game>div {/*textos*/
     border: 6px solid #2c3e50;
     font-family: Helvetica;
     font-weight: bold;
@@ -33,15 +33,15 @@ body {
     padding: 10px 20px
   }
   
-  .game > div.winner {
+  .game > div.winner {/*cor texto vencedor amarelo*/
     background: yellow;
   }
   
-  .game > div.winner > span {
+  .game > div.winner > span {/*cor teto vencedor azul*/
     color: blue;
   }
   
-  @media (min-width: 600px) {
+  @media (min-width: 600px) {/*medida das margens*/
     .game {
       width: 600px;
       height: 600px;
@@ -54,7 +54,7 @@ body {
     }
   }
   
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) {/*cursor apenas*/
     .btn {
       cursor: pointer
     }

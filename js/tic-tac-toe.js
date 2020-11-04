@@ -1,8 +1,8 @@
 const tic_tac_toe = {
 
-    board: ['','','','','','','','',''],
+    board: ['','','','','','','','',''],/*funçao para configurar os blocos em branco*/
     symbols: {
-                options: ['O','X'],
+                options: ['O','X'],/*opçoes q irao preencher os blocos*/
                 turn_index: 0,
                 change(){
                     this.turn_index = ( this.turn_index === 0 ? 1:0 );

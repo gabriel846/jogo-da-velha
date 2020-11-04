@@ -14,7 +14,7 @@ const tic_tac_toe = {
                         [0,1,2],
                         [3,4,5],
                         [6,7,8],
-                        [0,3,6],
+                        [0,3,6],    /*as sequencias q se forem feitas sao definidas como vitoria*/
                         [1,4,7],
                         [2,5,8],
                         [0,4,8],
@@ -33,11 +33,11 @@ const tic_tac_toe = {
         this.board[position] = currentSymbol;
         this.draw();
 
-        const winning_sequences_index = this.check_winning_sequences(currentSymbol);
+        const winning_sequences_index = this.check_winning_sequences(currentSymbol);/*se nao for feita alguma das sequencias retornar this*/
         if (this.is_game_over()){
             this.game_is_over();
         }
-        if (winning_sequences_index >= 0) {
+        if (winning_sequences_index >= 0) {/**/
             this.game_is_over();
             this.stylize_winner_sequence(this.winning_sequences[winning_sequences_index]);
         } else {
@@ -47,7 +47,7 @@ const tic_tac_toe = {
         return true;
     },
 
-    stylize_winner_sequence(winner_sequence) {
+    stylize_winner_sequence(winner_sequence) {/**/
         winner_sequence.forEach((position) => {
           this
             .container_element
@@ -56,7 +56,7 @@ const tic_tac_toe = {
         });
       },
 
-    check_winning_sequences(symbol) {
+    check_winning_sequences(symbol) {/*checar se tem alguma sequencia de vitoria*/
 
         for ( i in this.winning_sequences ) {
             if (this.board[ this.winning_sequences[i][0] ] == symbol  &&
@@ -69,7 +69,7 @@ const tic_tac_toe = {
         return -1;
     },
 
-    game_is_over() {
+    game_is_over() {/*texto q aparece caso perder a partida*/
         this.gameover = true;
         console.log('GAME OVER');
     },
@@ -78,13 +78,13 @@ const tic_tac_toe = {
         return !this.board.includes('');
     },
 
-    start() {
+    start() {/*botao de iniciar a partida*/
         this.board.fill('');
         this.draw();
         this.gameover = false;       
     },
 
-    restart() {
+    restart() {/*botao de reiniciar a pArtida*/
         if (this.is_game_over() || this.gameover) {
             this.start();
             console.log('this game has been restarted!')
